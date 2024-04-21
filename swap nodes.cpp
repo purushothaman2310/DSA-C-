@@ -23,17 +23,17 @@ public:
     
      
     while(currNode!= NULL && currNode->next!= NULL){
-        //saveptrs
-        ListNode*nextpair=currNode->next->next;
-        ListNode*second=currNode->next;
+        //saveptrs                                    //0->1->2->3->4->null
+        ListNode*nextpair=currNode->next->next;        //nextpair->3->4;
+        ListNode*second=currNode->next;                //2 is second node
 
         //reverse
-        second->next= currNode;
-        currNode->next=nextpair;
-        Prev->next=second;
+        second->next= currNode;                        //2->1
+        currNode->next=nextpair;                       //1->3->4
+        Prev->next=second;                             //0->2->1
 
         //
-        Prev=currNode;
+        Prev=currNode;                                update and assingning it
         currNode=nextpair;
 
         
